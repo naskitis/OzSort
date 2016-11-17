@@ -1,0 +1,13 @@
+#! /bin/bash
+# 
+# This BASH script can be used to disable background services run by the Kubuntu/Xubuntu Operating System.  
+# It is highly recommemded that you run (and edit if need-be) this script before you run any experiments. 
+#
+
+path=/etc/init.d
+
+for i in kdm powernowd cron cups sysklogd bluetooth klogd rsync citadel anacron mdadm acpi-support acpid atieventsd hotkey-setup avahi-daemon
+do
+  echo $path/$i
+  $path/$i stop;
+done

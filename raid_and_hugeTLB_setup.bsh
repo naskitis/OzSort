@@ -1,0 +1,25 @@
+#!/bin/bash
+# here is the script we used to initialize and format our RAID drive and also to initialize huge TLB.
+
+echo "This script will initialize a 6-disk RAID and set up a huge TLB file system.";
+echo "This script was developed for our system, and hence, it may not work correctly on yours.";
+echo "It has been provided to assist you in setting up your own system.";
+echo "Please open up an editor to edit this script, otherwise it may corrupt your data".
+echo "Control-C to exit or enter any key to continue at own risk".
+read;
+
+#mdadm --stop /dev/md0
+#mdadm --stop /dev/md_d0
+#mkdir /mnt/raid;
+#mdadm --create /dev/md0 --level=0 --chunk=256 --raid-devices=6 /dev/sda1 /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1 /dev/sdf1
+#mkdir -p /mnt/hugetlbfs
+#mount -t hugetlbfs none /mnt/hugetlbfs
+#hugeadm --pool-pages-min 2MB:2000
+
+#mkfs.jfs -s 1 /dev/md0
+
+# from /etc/fstab
+# /dev/md0 /mnt/raid jfs users,async,exec,rw,dev,noatime,nodiratime,noauto 0 0
+
+#mount /mnt/raid;
+
